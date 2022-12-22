@@ -17,6 +17,10 @@ super + shift + Return
 super + t
 	bspterm --full
 
+super + shift + {Left,Down,Up,Right}
+	dir={west,south,north,east}; \
+	bspc node -s "$dir.local" --follow \
+	    || bspc node -m "$dir" --follow
 ##---------- Rofi Launcher & Menus ----------##
 
 # Rofi App Launcher
@@ -32,8 +36,8 @@ ctrl + alt + t
 	sh ~/.config/bspwm/rofi/bin/themes
 
 # Rofi Menus/Applets
-super + {w,m,x,r,s}
-	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot}
+super + {w,m,x,r,s,d,e}
+	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,calc,emoji}
 
 ##---------- Applications ----------##
 
